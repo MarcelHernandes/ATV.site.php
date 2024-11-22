@@ -2,7 +2,10 @@
 
     namespace PHP\Modelo;
 
-    
+    require_once('DAO/Conexao.php');
+    require_once('DAO/Inserir.php');
+    use PHP\Modelo\DAO\Inserir;
+    use PHP\Modelo\DAO\Conexao;
 
 ?>
 <!DOCTYPE html>
@@ -16,50 +19,115 @@
 </head>
 <body style="background-color:#6969">
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="Inicial.php">Loja Instrumental</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Carrinho</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Acessos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Login</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="CadastrarPessoa.php">Cadastro</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Instrumentos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Violinos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Guitarras</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Pianos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Violão</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Contra-Baixo</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Flautas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Violoncelos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Harpas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Baterias</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">trompete</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Saxofone</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Trombone</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Configurações
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="ConsultarCodigo.php">Consultar</a></li>
+                            <li><a class="dropdown-item" href="PaginaAtualizar.php">Atualizar</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="PaginaExcluir.php">Excluir</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar Instrumento" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Busca</button>
+                </form>
+            </div>
         </div>
     </nav>
-
-    <form>
-    <div class="mb-3">
-        <label for="codigo" class="form-label">Informe o seu Codigo</label>
-        <input type="codigo" class="form-control" id="codigo" aria-describedby="codigo">
-    </div>
-    <div class="mb-3">
-        <label for="nome" class="form-label">Informe o seu Nome</label>
-        <input type="nome" class="form-control" id="nome">
-    </div>
-    <div class="mb-3">
-        <label for="endereci" class="form-label">Informe o seu Endereço</label>
-        <input type="endereco" class="form-control" id="endereco" aria-describedby="endereco">
-    </div>
-    <div class="mb-3">
-        <label for="telefone" class="form-label">Informe o seu Telefone</label>
-        <input type="telefone" class="form-control" id="telefone" aria-describedby="telefone">
-    </div>
     
-    <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Cadastrar
-        </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrado</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Você foi cadastrado com sucesso em nosso site!
-            </div>
-            </div>
-        </div>
-        </div>
-    </form>
+    <form method="POST">
+    
+    <label>Código: </label><br>
+    <input type="number" name="codigo" id="codigo"><br><br>
+
+    <label>Nome: </label><br>
+    <input type="text" name="nome" id="nome"><br><br>
+
+    <label>Endereço: </label><br>
+    <input type="text" name="endereco" id="endereco"><br><br>
+
+    <label>Telefone: </label><br>
+    <input type="text" name="telefone" id="telefone"><br><br>
+
+
+    <button type="submit">Cadastrar
+
+        <?php
+
+            if(isset($_POST['codigo'],$_POST['nome'],$_POST['endereco'],$_POST['telefone'])){
+                $conexao = new Conexao();// conectando o banco
+            
+                // pegando os dados do usuário
+                $codigo    = $_POST['codigo'];
+                $nome    = $_POST['nome'];
+                $endereco   = $_POST['endereco'];
+                $telefone = $_POST['telefone'];
+
+                // chamar a classe inserir
+                $inserir = new Inserir();
+                echo $inserir->CadastrarPessoa($conexao, $codigo, $nome, $endereco, $telefone);
+            }
+        ?>
+
+    </button>
+
+    </form><!--Fim do Formulário-->
 
 </body>
 </html>

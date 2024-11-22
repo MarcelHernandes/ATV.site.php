@@ -1,20 +1,14 @@
-<?php
-    namespace PHP\Modelo;
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="Imagens/estilo.css">
-    <title>Página Inicial</title>
-    
+    <title>Piano</title>
 </head>
-<body style="background-image:url('imagens/Orgao-Catedral.jpg'); background-repeat: no-repeat; background-size: 100%;">
+<body style="background-image:url('Imagens/Orgao-Catedral.jpg'); background-repeat: no-repeat; background-size: 100%;">
+
 
     <!-- Parte de cima do site (Navbar) -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -89,76 +83,42 @@
     </nav>
     <!-- Fim da parte de cima do site -->
 
-    <!-- Inicio do Carrosel -->
-    
-    <div id="carouselExampleCaptions" style="" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://exn6gz5eez4.exactdn.com/wp-content/uploads/2024/02/melhores-caixas-de-som-para-pc.jpeg?strip=all&lossy=1&w=1200&ssl=1" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Dúvidas sobre caixas de sons ?</h5>
-                    <p>Aqui você poderá explorar alguns tipos de caixas de sons que podem ser usadas conectadas nos instrumentos.</p>
+
+    <!-- Inicio dos cards -->
+    <div class="container text-center">
+        <div class="row">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="https://img-b.udemycdn.com/course/750x422/3517340_a25f_3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Pianos para cada necessidade</h5>
+                <p class="card-text">Caso você esteja precisando de um piano para orquestra nós temos. Quer um piano clássico assim como os outros, nós temos, sempre tentando atender a necessidade do cliente.</p>
+                <a href="#" class="btn btn-primary">Ir</a>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <br><br><br>
-    <!-- Fim do Carrosel -->
-
-    <!-- Cards -->
-
-    <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img src="https://i0.wp.com/www.violinovermelho.com.br/blog/wp-content/uploads/2014/08/violinos.jpg?fit=850%2C340&ssl=1" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Violinos</h5>
-              <p class="card-text">Aqui você verá alguns modelos de Violinos que você poderá ver e se gostar comprar.E caso queira personalizar nós podemos fazer isso como o cliente quiser.</p>
-              <a href="Violinos.php" class="btn btn-primary">Ir</a>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="https://super.abril.com.br/wp-content/uploads/2018/07/piano43.jpg?crop=1&resize=1212,909" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Piano e seus componentes.</h5>
+                <p class="card-text">Caso esteja com problemas em alguma parte de seu piano ou ele estar com seus componentes ruins, aqui você poderá comprar os componentes.</p>
+                <a href="#" class="btn btn-primary">Ir</a>
+                </div>
             </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img src="https://lojaopenstage.com.br/upload/blog/u54Bs1o6PMGPUkCNVQmngTVA2vrG5rmeeTDj1tfk.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Guitarras</h5>
-              <p class="card-text">Aqui você verá alguns modelos de Guitarras que você poderá ver e se gostar comprar. E caso queira personalizar nós podemos fazer isso como o cliente quiser.</p>
-              <a href="Guitarras.php" class="btn btn-primary">Ir</a>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="https://antoniopianos.com.br/wp-content/uploads/elementor/thumbs/foto-piano-02-pk81e10hic8ahkmqrovwbyvjf8t4tghukfodoasb3g.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Cursos de pianos</h5>
+                <p class="card-text">Aqui nós temos cursos do básico ao avançado com o Piano, contendo vídeo aulas e aulas ao vivo para o usuário. E para todas as idades desdos 6 anos de idade até a idade do Fabio.</p>
+                <a href="#" class="btn btn-primary">Ir</a>
+                </div>
             </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img src="https://image.made-in-china.com/2f0j00SKabwNlgrzoP/Music-Instruments-White-Baby-Grand-Piano-Mg152W-Popular-Model.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Pianos</h5>
-              <p class="card-text">Aqui você verá alguns modelos de Pianos que você poderá ver e se gostar comprar.E caso queira personalizar nós podemos fazer isso como o cliente quiser.</p>
-              <a href="Piano.php" class="btn btn-primary">Ir</a>
-            </div>
         </div>
-      </div>
-      
-    </div>
     </div>
 
-    <!-- Fim do Cards -->
-
-</ul>
 </body>
-
 </html>
